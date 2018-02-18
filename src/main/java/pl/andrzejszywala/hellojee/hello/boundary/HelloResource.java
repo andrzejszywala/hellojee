@@ -45,6 +45,7 @@ public class HelloResource {
 				   .add("database", metadata.getDatabaseProductName() + " - " + metadata.getDatabaseProductVersion())
 		           .add("host", InetAddress.getLocalHost().getHostName() + " (" + InetAddress.getLocalHost().getHostAddress() + ")")
 		           .add("port", request.getServerPort())
+		           .add("session", request.getSession(true).getId())
 		           .add("hello", em.createNamedQuery(Hello.findAll, Hello.class)
 		        		           .getResultList()
 		        		           .stream()
